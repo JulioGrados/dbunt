@@ -22,7 +22,7 @@
     "mongoose": "^5.8.9",
     "mongoose-beautiful-unique-validation": "^7.1.1",
     "mongoose-timestamp": "^0.6.0",
-    "utils": "file:../utils-unt"
+    "utils": "git+https://julio_giampiere_grados:ATBBPTbedraa4AVkZjzJysw6Q8Gr657FCC98@bitbucket.org/devcodela/utils-unt.git"
   },
   "devDependencies": {
     "mongodb-memory-server": "^6.3.3"
