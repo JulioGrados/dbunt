@@ -1,0 +1,30 @@
+{
+  "name": "db-unt",
+  "version": "1.0.0",
+  "description": "Modelos, colecciones y acceso a base de datos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bitbucket.org/devcodela/db-unt.git"
+  },
+  "author": "Julio Giampiere Grados Caballero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/devcodela/db-unt/issues"
+  },
+  "homepage": "https://bitbucket.org/devcodela/db-unt#readme",
+  "dependencies": {
+    "defaults": "^1.0.3",
+    "moment-timezone": "^0.5.27",
+    "mongoose": "^5.8.9",
+    "mongoose-beautiful-unique-validation": "^7.1.1",
+    "mongoose-timestamp": "^0.6.0",
+    "utils": "file:../utils-unt"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^6.3.3"
+  }
+}
