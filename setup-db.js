@@ -13,7 +13,7 @@ module.exports = config => {
     env: 'dev'
   })
 
-  const { uri = process.env.DB_URI || 'mongodb://localhost', env, database } = config
+  const { uri = 'mongodb://localhost', env, database } = config
 
   const opt = {
     useNewUrlParser: true,
