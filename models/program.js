@@ -10,10 +10,16 @@ const ProgramSchema = new Schema(
     name: {
       type: String,
     },
+    text: {
+      type: String,
+    },
     description: {
         type: String,
     },
     image: {
+      type: String
+    },
+    logo: {
       type: String
     },
   },
