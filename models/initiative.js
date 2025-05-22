@@ -16,7 +16,19 @@ const InitiativeSchema = new Schema(
     back: {
         type: String
     },
-    image: {
+    backImage: {
+      type: String
+    },
+    char1: {
+      type: String
+    },
+    char2: {
+      type: String
+    },
+    char3: {
+      type: String
+    },
+    char4: {
       type: String
     },
   },
