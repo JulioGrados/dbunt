@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const timestamps = require('mongoose-timestamp')
 const mongooseBeautifulUniqueValidation = require('mongoose-beautiful-unique-validation')
 
-const MentorSchema = new Schema(
+const TeamSchema = new Schema(
   {
     names: {
       type: String,
@@ -18,19 +18,19 @@ const MentorSchema = new Schema(
     }
   },
   {
-    collection: 'mentors'
+    collection: 'teams'
   }
 )
 
-MentorSchema.plugin(timestamps, {
+TeamSchema.plugin(timestamps, {
   createdAt: { index: true },
   updatedAt: { index: true }
 })
 
-MentorSchema.plugin(mongooseBeautifulUniqueValidation)
+TeamSchema.plugin(mongooseBeautifulUniqueValidation)
 
-MentorSchema.index({
+TeamSchema.index({
   names: 1,
 })
 
-module.exports = mongoose.model('Mentor', MentorSchema)
+module.exports = mongoose.model('Team', TeamSchema)
