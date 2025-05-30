@@ -13,7 +13,7 @@ module.exports = config => {
     env: 'dev'
   })
 
-  const { uri = 'mongodb://mongo:carmenunt@unt_incubaunt:27017/?tls=false', env, database } = config
+  const { uri = 'mongodb://localhost', env, database } = config
 
   const opt = {
     useNewUrlParser: true,
@@ -35,12 +35,12 @@ module.exports = config => {
     }
     console.log('db initial', db)
     try {
-      // if (env === 'test') {
-      //   mongoServer = new MongoMemoryServer()
-      //   const mongoUri = await mongoServer.getUri()
-      //   db = await mongoose.connect(mongoUri, opt)
-      //   return db
-      // }
+      if (env === 'test') {
+        mongoServer = new MongoMemoryServer()
+        const mongoUri = await mongoServer.getUri()
+        db = await mongoose.connect(mongoUri, opt)
+        return db
+      }
       db = await mongoose.connect(uri, opt)
     } catch (error) {
       const errorMenssage = {
