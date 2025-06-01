@@ -8,7 +8,7 @@ let db = null
 
 module.exports = config => {
   config = defaults(config, {
-    host: 'localhost',
+    host: 'mongodb://mongo:carmenunt1@unt_incubaunt:27017/?tls=false',
     database: 'incubaunt',
     env: 'dev'
   })
