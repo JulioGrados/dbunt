@@ -26,6 +26,6 @@
     "utils": "git+https://julio_giampiere_grados:ATBBB3YvFHF6yaBRupfawdTvfS560D2BEDCE@bitbucket.org/devcodela/utils-unt.git"
   },
   "devDependencies": {
-    "mongodb-memory-server": "^6.3.3"
+    "mongodb-memory-server": "^7.6.3"
   }
 }

@@ -46,7 +46,7 @@ module.exports = config => {
     try {
       if (env === 'test') {
         console.log('1')
-        mongoServer = new MongoMemoryServer()
+        mongoServer = new MongoMemoryServer().create()
         const mongoUri = await mongoServer.getUri()
         db = await mongoose.connect(mongoUri, opt)
         return db
