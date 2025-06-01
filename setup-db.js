@@ -37,14 +37,14 @@ module.exports = config => {
 
   let mongoServer
 
-  const connect = async () => {
+  const connect = async (env) => {
     console.log('connect')
     if (db) {
       return db
     }
     console.log('db initial', db)
     try {
-      if (config.mongo.env !== 'production') {
+      if (env === 'test') {
         console.log('1')
         mongoServer = new MongoMemoryServer()
         const mongoUri = await mongoServer.getUri()
