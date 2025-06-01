@@ -9,9 +9,9 @@ let db = null
 
 let host
 if (config.mongo.env === 'production') {
-  host = config.media.productionUrl
+  host = config.mongo.productionUrl
 } else {
-  host = config.media.localUrl
+  host = config.mongo.localUrl
 }
 
 
