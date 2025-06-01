@@ -47,7 +47,11 @@ module.exports = config => {
       if (env === 'test') {
         console.log('1')
         const { MongoMemoryServer } = require('mongodb-memory-server')
-        mongoServer = await MongoMemoryServer.create(); 
+        mongoServer = await MongoMemoryServer.create({
+          instance: {
+            dbName: 'incubaunt'
+          }
+        }); 
         const mongoUri = mongoServer.getUri();
         db = await mongoose.connect(mongoUri, opt)
         return db
