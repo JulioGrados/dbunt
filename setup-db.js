@@ -1,7 +1,7 @@
 'use strict'
-
+const { MongoMemoryServer } = require('mongodb-memory-server');
 const mongoose = require('mongoose')
-const { MongoMemoryServer } = require('mongodb-memory-server')
+
 const defaults = require('defaults')
 const config = require('config')
 
@@ -46,8 +46,8 @@ module.exports = config => {
     try {
       if (env === 'test') {
         console.log('1')
-        mongoServer = new MongoMemoryServer().create()
-        const mongoUri = await mongoServer.getUri()
+        mongoServer = await MongoMemoryServer.create(); 
+        const mongoUri = mongoServer.getUri();
         db = await mongoose.connect(mongoUri, opt)
         return db
       }
