@@ -44,12 +44,14 @@ module.exports = config => {
     }
     console.log('db initial', db)
     try {
-      if (env === 'test') {
+      if (config.mongo.env !== 'production') {
+        console.log('1')
         mongoServer = new MongoMemoryServer()
         const mongoUri = await mongoServer.getUri()
         db = await mongoose.connect(mongoUri, opt)
         return db
       }
+      console.log('2')
       db = await mongoose.connect(uri, opt)
     } catch (error) {
       const errorMenssage = {
