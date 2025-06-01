@@ -3,17 +3,26 @@
 const mongoose = require('mongoose')
 const { MongoMemoryServer } = require('mongodb-memory-server')
 const defaults = require('defaults')
+const config = require('config')
 
 let db = null
 
+let host
+if (config.mongo.env === 'production') {
+  host = config.media.productionUrl
+} else {
+  host = config.media.localUrl
+}
+
+
 module.exports = config => {
   config = defaults(config, {
-    host: 'mongodb://mongo:carmenunt1@unt_incubaunt:27017/?tls=false',
+    host: host,
     database: 'incubaunt',
     env: 'dev'
   })
-
-  const { uri = 'mongodb://localhost', env, database } = config
+  
+  const { uri = `mongodb://${host}`, env, database } = config
 
   const opt = {
     useNewUrlParser: true,
