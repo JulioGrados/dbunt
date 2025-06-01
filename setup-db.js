@@ -23,6 +23,7 @@ module.exports = config => {
   
   const { uri = `mongodb://${host}`, env, database } = config
   console.log('uri', uri)
+  console.log('database', database)
   const opt = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
