@@ -46,6 +46,10 @@ const EvaluationSchema = new Schema(
         type: Schema.Types.ObjectId, 
         ref: 'Evaluation', 
         default: null 
+    },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
     }
   },
   {
