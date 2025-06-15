@@ -42,6 +42,9 @@ const EvaluationSchema = new Schema(
         type: Date,
         default: Date.now
     },
+    color: {
+      type: String
+    },
     parent: { 
         type: Schema.Types.ObjectId, 
         ref: 'Evaluation', 
